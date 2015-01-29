@@ -1,0 +1,112 @@
+﻿@using MVCResumeWebsite.Controllers;
+@{
+    ViewBag.Title = "Works";
+}
+<!-- Navigation Starts -->
+<div id="nav" class="navbar navbar-default" role="navigation">
+    <!-- Navbar Header Starts -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- Navbar Header Ends -->
+    <!-- Navbar Collapse Starts -->
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/Home/">Home</a></li>
+            <li><a href="/Home/About">About</a></li>
+            <li><a href="/Home/Skills">My Skills</a></li>
+            <li class="active"><a href="/Home/Works">Works</a></li>
+            <li><a href="/Home/Contact">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Navbar Collapse Ends -->
+</div>
+<!-- Navigation Ends -->
+<!-- Main Text Starts -->
+<h1>My Recent Works</h1>
+<!-- Main Text Ends -->
+<!-- Content Starts -->
+<div class="content-area">
+    <!-- Works Filter Starts -->
+    <ul id="works-filter" class="list-inline">
+        <li>
+            <a href="#" class="btn active" data-group="all">
+                All
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn" data-group="webdesign">
+                Game Development
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn" data-group="photography">
+                Writing
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn" data-group="printmedia">
+                Voice Acting
+            </a>
+        </li>
+    </ul>
+    <!-- Works Filter Ends -->
+    <!-- Works Gallery Starts -->
+    <ul id="works-grid" class="row">
+        <!-- Work Item #1 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "photography"]'>
+            <a href="/images/works/works-img1.jpg">
+                <img src="/images/works/works-img1.jpg" alt="Work Image1" class="img-responsive works-img">
+            </a>
+            <span onclick="window.open('http://www.fictioncrowd.com/urban-legends/the-utt', '_blank');">Link</span>
+        </li>
+        <!-- Work Item #1 Ends -->
+        <!-- Work Item #2 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "webdesign"]'>
+            <a href="/images/works/works-img2.jpg">
+                <img src="/images/works/works-img2.jpg" alt="Work Image2" class="img-responsive works-img">
+            </a>
+            <span onclick="window.open('http://www.fleetinginfinity.com/TrapsFromScrapsFinal_Data.zip', '_blank');">Download</span>
+        </li>
+        <!-- Work Item #2 Ends -->
+        <!-- Work Item #3 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "webdesign"]'>
+            <a href="/images/works/works-img3.jpg">
+                <img src="/images/works/works-img3.jpg" alt="Work Image3" class="img-responsive works-img">
+            </a>
+            <span onclick="window.open('http://adc.fleetinginfinity.com/', '_blank');">Website</span>
+        </li>
+        <!-- Work Item #3 Ends -->
+        <!-- Work Item #4 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "photography"]'>
+            <a href="/images/works/works-img4.jpg">
+                <img src="/images/works/works-img4.jpg" alt="Work Image1" class="img-responsive works-img">
+            </a>
+            <span>Novel - In Progress</span>
+        </li>
+        <!-- Work Item #4 Ends -->
+        <!-- Work Item #5 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "photography"]'>
+            <a href="/images/works/works-img5.jpg">
+                <img src="/images/works/works-img5.jpg" alt="Work Image1" class="img-responsive works-img">
+            </a>
+            <span onclick="window.open('http://gamemoir.com/2015/01/08/lunar-iii-or-how-a-game-that-does-not-exist-made-me-a-game-dev/', '_blank');">Article Link</span>
+        </li>
+        <!-- Work Item #5 Ends -->
+        <!-- Work Item #6 Starts -->
+        <li class="col-sm-3 col-xs-6 works-grid" data-groups='["all", "printmedia"]'>
+            <a href="/images/works/works-img6.jpg">
+                <img src="/images/works/works-img6.jpg" alt="Work Image1" class="img-responsive works-img">
+            </a>
+            <span onclick="window.open('http://www.skyfallwrestling.com/radioshow/SWARadio30.mp3', '_blank');">Voiced Ace - Listen</span>
+        </li>
+        <!-- Work Item #6 Ends -->
+    </ul>
+    <!-- Works Gallery Ends -->
+</div>
+<!-- Content Ends -->
