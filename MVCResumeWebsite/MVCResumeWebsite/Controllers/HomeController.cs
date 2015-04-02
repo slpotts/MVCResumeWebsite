@@ -30,6 +30,7 @@ namespace MVCResumeWebsite.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Contact(MVCResumeWebsite.Models.ContactMessage ContactForm)
         {
             var MyAddress = ConfigurationManager.AppSettings["ContactEmail"];
@@ -64,6 +65,16 @@ namespace MVCResumeWebsite.Controllers
         }
 
         public ActionResult SendEmail()
+        {
+            return View();
+        }
+
+        public ActionResult JavascriptExercises()
+        {
+            return View();
+        }
+
+        public ActionResult Blog()
         {
             return View();
         }

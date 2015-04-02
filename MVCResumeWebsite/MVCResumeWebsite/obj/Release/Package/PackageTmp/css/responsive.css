@@ -1,0 +1,225 @@
+/* Large Devices Styles Starts */
+
+@media (min-width: 1200px) {
+
+	/* Zig Zag Border Styles Starts */
+
+		.zigzag {
+			position: absolute;
+			left: -10px;
+			top: 0;
+			width: 20px;
+			height: 100%;
+			background: linear-gradient( 45deg, transparent 75%, #2b5797 75%) 0% 0,
+						linear-gradient(135deg, transparent 75%, #2b5797 75%) 0% 0%;
+			background-repeat: repeat-y;
+			background-size: 10px 10px, 10px 10px;
+		}
+	
+}
+
+/* Medium Devices Styles Starts */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	h1 {
+		font-size: 62px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+
+	/* Navigation Styles Starts */
+	
+		.navbar-nav > li {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		
+	/* Zig Zag Border Styles Starts */
+
+		.zigzag {
+			position: absolute;
+			left: -10px;
+			top: 0;
+			width: 20px;
+			height: 100%;
+			background: linear-gradient( 45deg, transparent 75%, #2b5797 75%) 0% 0,
+						linear-gradient(135deg, transparent 75%, #2b5797 75%) 0% 0%;
+			background-repeat: repeat-y;
+			background-size: 10px 10px, 10px 10px;
+		}
+		
+	/* Works Page Styles Starts */
+
+		ul#works-filter li {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		ul#works-filter li a.btn {
+			padding: 6px 8px;
+		}
+	
+
+}
+
+/* Small Devices Styles Starts */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	/* Main Image Styles Starts */
+	
+		.main-img {
+			height: 400px;
+		}
+			.main-img .backstretch img {
+				top: -10% !important;
+			}
+
+	/* Zig Zag Border Styles Starts */
+
+		.zigzag {
+			position: absolute;
+			left: 0;
+			top: -10px;
+			width: 100%;
+			height: 10px;
+			background: linear-gradient( 45deg, #2b5797 25%, transparent 25%) 0% 100%,
+						linear-gradient(-45deg, #2b5797 25%, transparent 25%) 0 100%;
+			background-repeat: repeat-x;
+			background-size: 10px 10px, 10px 10px;
+		}
+		
+}
+
+/* Extra Small Devices Styles Starts */
+
+@media (max-width: 767px) {
+
+	h1 {
+		font-size: 62px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+	
+	h1, h2, 
+	.quotes, 
+	.content-area, 
+	.sm-links {
+		text-align: center;
+	}
+	
+	/* Main Image Styles Starts */
+	
+		.main-img {
+			height: 300px;
+		}
+
+	/* Navigation Styles Starts */
+
+		.navbar-collapse {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.navbar-default .navbar-collapse, 
+		.navbar-default .navbar-form {
+			border: none;
+		}
+		.navbar-default .navbar-nav > li {
+			padding-top: 2px;
+		}
+		.navbar-default .navbar-nav > li > a {
+			padding: 10px;
+		}
+		.navbar-default .navbar-nav > li > a, 
+		.navbar-default .navbar-nav > li > a:hover, 
+		.navbar-default .navbar-nav > li.active > a, 
+		.navbar-default .navbar-nav > li.active > a:hover {
+			border: none;
+		}
+		.navbar-default .navbar-nav > li > a:hover, 
+		.navbar-default .navbar-nav > li.active > a, 
+		.navbar-default .navbar-nav > li.active > a:hover {
+			background-color: #234e8c;
+		}
+		
+	/* Zig Zag Border Styles Starts */
+
+		.zigzag {
+			position: absolute;
+			left: 0;
+			top: -10px;
+			width: 100%;
+			height: 10px;
+			background: linear-gradient( 45deg, #2b5797 25%, transparent 25%) 0% 100%,
+						linear-gradient(-45deg, #2b5797 25%, transparent 25%) 0 100%;
+			background-repeat: repeat-x;
+			background-size: 10px 10px, 10px 10px;
+		}
+	
+	/* Recent Works Styles Starts */
+
+		.recent-works > .row > div + div {
+			margin-top: 25px;
+		}
+			.about-img.img-responsive, 
+			.works-img.img-responsive {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+	/* Skills Set Progress Bar Styles Starts */
+	
+		.skillsbar h2 {
+			margin-bottom: 15px;
+		}
+		.skillsbar .progress {
+			margin-bottom: 30px;
+		}
+		
+	/* Works Page Styles Starts */
+	
+		ul#works-filter li {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		ul#works-filter li a.btn {
+			padding: 6px 8px;
+		}
+		ul#works-grid li {
+			min-height: 85px;
+			height: auto !important;
+			height: 85px;		
+		}
+			ul#works-grid li img.img-responsive {
+				margin-left: auto;
+				margin-right: auto;
+			}
+	
+	/* Social Media Links Styles Starts */
+
+		.sm-links li {
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+		}
+		.sm-links li + li {
+			margin-left: 5px;
+		}
+			.sm-links li a, 
+			.sm-links li a:hover, 
+			.sm-links li a:focus {
+				font-size: 26px;
+			}
+			.sm-links li:hover a {
+				font-size: 22px;
+			}
+
+	/* Contact Info Bar Styles Starts */
+
+		.icon-area + .icon-area {
+			padding-top: 25px;
+		}
+	
+}

@@ -1,0 +1,51 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList<MVCResumeWebsite.Models.BlogPost>
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="services section" id="about">
+    <div class="container">
+            <div class="col-md-12">
+                <div class="text-right" style="float:right">
+                    <div class="well" style="color:black">
+                        <form method="get">
+                            <input type="text" name="query" value="@ViewBag.Query" />
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                @foreach (var item in Model)
+                {
+
+                    if (item.Published == true)
+                    {
+            <!-- First Blog Post -->
+                        <h2>
+                            @Html.ActionLink(@item.Title, "Details", new { Slug = item.Slug })
+                        </h2>
+                        <p class="lead">
+                            by <a href="/Home/">Steven</a>
+                        </p>
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on @item.CreatedDate.DateTime.ToLongDateString() at @item.CreatedDate.DateTime.ToShortTimeString()</p>
+
+                        if (item.Url != null)
+                        {
+                            <hr>
+                            <img src="@Html.Raw(item.Url)" style="height:250px; width:250px" />
+                        }
+                        <hr>
+                        @Html.Raw(item.BodyText)
+
+                        <hr />
+                    }
+
+                }
+            </div>
+
+            <ul class="pager">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, ViewBag.Query }))
+            </ul>
+</div>
+</section>

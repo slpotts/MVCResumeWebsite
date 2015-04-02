@@ -1,0 +1,83 @@
+﻿@model MVCResumeWebsite.Models.BlogPost
+
+@{
+    ViewBag.Title = "Details";
+}
+<section class="contact section" id="contact">
+    <div class="container" style="min-height: 600px;">
+        <div class="heading">
+            <h2>@Html.DisplayFor(model => model.Title)</h2>
+            </div>
+            <h4>@Html.DisplayFor(model => model.CreatedDate)</h4>
+            <div>
+                <hr />
+                <div>
+                    @Html.Raw(Model.BodyText)<br /><br />
+                    @if (Model.Url != null)
+                    {
+                        <img src="@Html.DisplayFor(model => model.Url)" style="height:250px; width:250px" />
+                    }
+                    <br />
+                </div>
+                <hr />
+                <div>
+
+                </div>
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                using (Html.BeginForm("SubmitComment", "BlogPosts", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    <div class="form-horizontal">
+                        <h4>Comments</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.Hidden("PostId", Model.Id)
+
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <textarea name="Message" class="col-md-6" id="textAreaMessage" style="color:black"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>
+                    <span>You must be logged in to leave a comment.  Please <a href="@Url.Action("Login","Account")">login</a> or <a href="@Url.Action("Register","Account")">register</a>.</span>
+                    <br />
+                </div>
+            }
+
+            <div>
+                @foreach (var item in Model.Comments)
+                {
+                    if (item.ShowComment)
+                    {
+                        @Html.Label("Author:  ")
+                        <span>@item.Author.UserName</span>
+                        <br />
+                        @Html.Label("Comment:  ")
+                        <span>@item.Message</span>
+                    }
+                }
+            </div>
+
+            <p>
+                <br />
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+</section>

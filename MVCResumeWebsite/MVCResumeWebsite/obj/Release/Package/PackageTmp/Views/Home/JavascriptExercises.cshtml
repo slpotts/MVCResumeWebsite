@@ -1,0 +1,263 @@
+﻿@{
+    ViewBag.Title = "JavascriptExercises";
+}
+<section class="services section" id="about">
+    <div class="container" style="min-height:600px;">
+        <div class="heading">
+            <h2>JavascriptExercises</h2>
+            </div>
+            <div class="container-fluid">
+                <ul class="list-group" style="margin-left: 15px; font-size: 20px;">
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#maxOfThree">Max of Three</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#sumOrMultiply">Sum or Multiply</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#factorMod">Factorial</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#palinMod">Palindrome</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#fizzMod">FizzBuzz</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#perfectMod">Perfect Numbers</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#happyMod">Happy Numbers</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#armMod">Armstrong Numbers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+            @section Scripts {
+                <script>
+                    function maxThree() {
+                        var n1 = document.getElementById('num1').value;
+                        var n2 = document.getElementById('num2').value;
+                        var n3 = document.getElementById('num3').value;
+                        var largest = parseInt(n1);
+
+                        if (n2 > largest) {
+                            largest = n2;
+                        }
+                        if (n3 > largest) {
+                            largest = n3;
+                        }
+
+                        document.getElementById('maxOutput').innerHTML = largest;
+                    }
+
+                    function sum() {
+                        var sarr = document.getElementById('arr1').value;
+                        var sum = 0;
+
+                        sarr = eval(sarr);
+
+                        for (var i = 0; i < sarr.length; i++) {
+                            sum += sarr[i];
+                        }
+
+                        document.getElementById('sumMultiplyOutput').innerHTML = sum;
+                    }
+
+                    function multiply() {
+                        var marr = document.getElementById('arr1').value;
+                        var product = 1;
+
+                        marr = eval(marr);
+
+                        for (var i = 0; i < marr.length; i++) {
+                            product = product * marr[i];
+                        }
+
+                        document.getElementById('sumMultiplyOutput').innerHTML = product;
+
+                    }
+
+                    function factorial() {
+                        var fact = document.getElementById('factorial').value;
+                        var prod = 1;
+
+                        for (var i = fact; i > 0; i--) {
+                            prod = prod * i;
+                        }
+
+                        document.getElementById('factorialOutput').innerHTML = prod;
+                    }
+
+                    function palindrome() {
+                        var palCheck = document.getElementById('checkString').value;
+
+                        document.getElementById('palOutput').innerHTML = (palCheck === palCheck.split('').reverse().join(''))
+                    }
+
+                    function fizzBuzz() {
+                        var fizzString = "";
+
+                        for (var i = 1; i <= 100; i++) {
+                            if (i % 3 == 0) {
+                                if (i % 5 == 0) {
+                                    fizzString += " FizzBuzz";
+                                }
+                                fizzString += " Fizz";
+                            }
+                            else if (i % 5 == 0) {
+                                fizzString += " Buzz";
+                            }
+                            else {
+                                fizzString += " " + i;
+                            }
+                        }
+
+                        document.getElementById('fizzOutput').innerHTML = fizzString;
+                    }
+
+                    function ifPerfect() {
+                        var array = [];
+                        var pn = document.getElementById('checkPerfect').value;
+                        var arrayLoc = 0;
+
+                        for (var i = 1; i < pn; i++) {
+                            if (pn % i == 0) {
+                                array[arrayLoc] = i;
+                                arrayLoc++;
+                            }
+                        }
+
+                        var sum = 0;
+
+                        for (var b = 0; b < array.length; b++) {
+                            sum += array[b];
+                        }
+
+                        if (sum == pn) {
+                            document.getElementById('perfectOutput').innerHTML = "Perfect."
+                        }
+                        else {
+                            document.getElementById('perfectOutput').innerHTML = "Not Perfect."
+                        }
+                    }
+
+                    function ifPerfectN(n) {
+                        var array = [];
+                        var arrayLoc = 0;
+
+                        for (var i = 1; i < n; i++) {
+                            if (n % i == 0) {
+                                array[arrayLoc] = i;
+                                arrayLoc++;
+                            }
+                        }
+
+                        var sum = 0;
+
+                        for (var b = 0; b < array.length; b++) {
+                            sum += array[b];
+                        }
+
+                        if (sum == n) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+
+                    function perfectNumbers() {
+                        var perfectArray = [];
+                        var perfectArrayLoc = 0;
+                        for (var i = 1; i <= 10000; i++) {
+                            if (ifPerfectN(i)) {
+                                perfectArray[perfectArrayLoc] = i;
+                                perfectArrayLoc++;
+                            }
+                        }
+
+                        document.getElementById('perfectOutput').innerHTML = perfectArray;
+                    }
+
+
+                    function sumPowDigits(num, pow) {
+                        num = (num + "").split("");
+                        var sum = 0;
+                        for (var i = 0; i < num.length; i++)
+                            sum += Math.pow(num[i], pow);
+                        return sum;
+                    }
+
+                    function isHappy(number) {
+                        var seen = [];
+                        do {
+                            number = sumPowDigits(number, 2);
+
+                            if (seen.indexOf(number) < 0) {
+
+
+                                if (number == 1)
+                                    return true;
+
+                                seen.push(number);
+                                console.log(seen);
+                            }
+                            else { return false };
+                        }
+                        while (number != 1);
+                    }
+
+                    function happyNumbers() {
+                        var happyArray = [];
+                        var hn = 1;
+
+                        while (happyArray.length < 5) {
+                            if (isHappy(hn))
+                                happyArray.push(hn);
+
+                            hn++;
+                        }
+
+                        document.getElementById('happyOutput').innerHTML = happyArray;
+                    }
+
+                    function armstrongNumbers() {
+                        var armNum = 100;
+                        var armDig = [];
+                        var armNums = [];
+                        var numArmNums = 0;
+                        var armTotal = 0;
+
+                        armNum = eval(armNum);
+
+                        while (armNum < 1000) {
+                            armDig = ("" + armNum).split("");
+                            armDig[0] = eval(armDig[0]);
+                            armDig[1] = eval(armDig[1]);
+                            armDig[2] = eval(armDig[2]);
+                            armTotal = ((Math.pow(armDig[0], 3)) + (Math.pow(armDig[1], 3)) + (Math.pow(armDig[2], 3)))
+                            if (armTotal == armNum) {
+                                armNums[numArmNums] = armNum;
+                                numArmNums++;
+                                console.log(armNum);
+                            }
+                            armNum++;
+                        }
+
+                        document.getElementById('armOutput').innerHTML = armNums;
+                    }
+                </script>
+
+                <script>
+                    SyntaxHighlighter.all();
+                </script>
+            }
+
+
+
+
